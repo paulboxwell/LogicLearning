@@ -22,23 +22,23 @@ class Game:
             return "01"  # Southwest
 
     def move(self, direction):
-        if direction == "00":  # Move Southeast
+        if direction == "11":  # Move Southeast
             self.current_x += 1
             self.current_y -= 1
-        elif direction == "01":  # Move Southwest
+        elif direction == "10":  # Move Southwest
             self.current_x -= 1
             self.current_y -= 1
-        elif direction == "10":  # Move Northeast
+        elif direction == "01":  # Move Northeast
             self.current_x += 1
             self.current_y += 1
-        elif direction == "11":  # Move Northwest
+        elif direction == "00":  # Move Northwest
             self.current_x -= 1
             self.current_y += 1
 
     def is_won(self):
         distance = abs(self.current_x) + abs(self.current_y)
-        return distance <= 2
+        return distance <= 3
 
     def is_lost(self, rounds):
         distance = abs(self.current_x) + abs(self.current_y)
-        return distance > 12 or rounds > 12
+        return distance > 22 or rounds > 12
