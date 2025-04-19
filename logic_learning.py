@@ -28,16 +28,16 @@ class LogicLearningAI:
             # Identify input with the lowest score
             lowest_score_input = min(self.scores, key=self.scores.get)
 
-            # Ensure the new guess differs from the current value
+            # Increment the current value to the next logical option
             current_value = self.outputs[lowest_score_input]
-            new_value = current_value
-            while new_value == current_value:
-                new_value = format(random.randint(0, 3), '02b')  # Generate new random output
-            
-            self.outputs[lowest_score_input] = new_value
-            self.scores[lowest_score_input] = 0  # Reset score for new guess
-        print(f"Outputs:\t{self.outputs}")
+            current_value_int = int(current_value, 2)  # Convert binary string to integer
+            new_value_int = (current_value_int + 1) % 4  # Increment and wrap around (0 to 3)
+            new_value = format(new_value_int, '02b')  # Convert back to 2-bit binary string
 
+            self.outputs[lowest_score_input] = new_value
+            self.scores[lowest_score_input] = 0  # Reset score for the new guess
+        print(f"Outputs:\t{self.outputs}")
         print(f"Scores: \t{self.scores}")
+
         # Clear round inputs for the next round
         self.round_inputs = set()
