@@ -42,3 +42,26 @@ class Game:
     def is_lost(self, rounds):
         distance = abs(self.current_x) + abs(self.current_y)
         return distance > 22 or rounds > 12
+
+    def print_board(self):
+        # Create a simple visual representation of the board
+        board_size = 21
+        board = [["." for _ in range(board_size)] for _ in range(board_size)]
+
+        # Center the board and plot target and current position
+        center = board_size // 2
+        target_x = center + self.target_x
+        target_y = center - self.target_y
+        current_x = center + self.current_x
+        current_y = center - self.current_y
+
+        # Mark positions on the board
+        if 0 <= target_x < board_size and 0 <= target_y < board_size:
+            board[target_y][target_x] = "T"  # Target position
+        if 0 <= current_x < board_size and 0 <= current_y < board_size:
+            board[current_y][current_x] = "C"  # Current position
+
+        # Print the board
+        print("\nBoard:")
+        for row in board:
+            print(" ".join(row))
