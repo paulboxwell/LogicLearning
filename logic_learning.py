@@ -30,6 +30,8 @@ class LogicLearningAI:
 
             # Increment the current value to the next logical option
             current_value = self.outputs[lowest_score_input]
+            if current_value == "xx":
+                current_value = "00"
             current_value_int = int(current_value, 2)  # Convert binary string to integer
             new_value_int = (current_value_int + 1) % 4  # Increment and wrap around (0 to 3)
             new_value = format(new_value_int, '02b')  # Convert back to 2-bit binary string
