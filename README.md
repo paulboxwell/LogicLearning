@@ -1,5 +1,3 @@
-Below is an example `README.md` file for your GitHub project:
-
 ---
 
 # LogicLearning
@@ -156,5 +154,3 @@ Each method has its own trade-offs in terms of convergence rate and sample effic
 _This project is provided for educational purposes. Feel free to explore, modify, and extend the work._
 
 ---
-
-This README should provide a comprehensive overview of the project for developers and researchers interested in simple reinforcement learning algorithms. If you have any further questions or would like to discuss alternative strategies, please feel free to reach out or contribute to the discussion on GitHub.
