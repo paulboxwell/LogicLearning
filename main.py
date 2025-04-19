@@ -54,4 +54,4 @@ def main(show_board=False, num_runs=10):
 if __name__ == "__main__":
     # Enable or disable board printing by passing True or False to `main`
     # Specify the number of runs with `num_runs`
-    main(show_board=False, num_runs=1000)
+    main(show_board=False, num_runs=100)

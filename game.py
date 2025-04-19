@@ -53,7 +53,6 @@ class Game:
         return distance <= 2
 
     def is_lost(self, moves):
-        distance = abs(self.current_x) + abs(self.current_y)
         return moves > 40 or self.is_out_of_bounds()
 
     def print_board(self):
