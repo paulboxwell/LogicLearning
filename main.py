@@ -7,11 +7,11 @@ def main(show_board=False):
     ai = LogicLearningAI()
     rounds = 0
 
-    while True:
+    while True: # Learning session
         game.reset_position()
         moves = 0
 
-        while True:
+        while True: # Round Loop
             moves += 1
             game_input = game.get_input()
             ai_output = ai.get_output(game_input)
