@@ -19,16 +19,16 @@ def main(show_board=False):
 
             # Optionally display the board
             if show_board:
+                print("input: ", game_input, " Output: ", ai_output)
+                input("")
                 game.print_board()
-            input("")
+            
             if game.is_won():
-                print(f"AI won the round in {moves} moves!")
-                print(game.current_x, " ", game.current_y)
+                print(f"Round {rounds} Won in {moves} moves!")
                 ai.round_complete("won")
                 break
             elif game.is_lost(moves):
-                print(f"AI lost the round after {moves} moves.")
-                print(game.current_x, " ", game.current_y)
+                print(f"Round {rounds} Lost in {moves} moves!")
                 ai.round_complete("lost")
                 rounds += 1
                 break
@@ -41,4 +41,4 @@ def main(show_board=False):
 
 if __name__ == "__main__":
     # Enable or disable board printing by passing True or False to `main`
-    main(show_board=True)
+    main(show_board=False)
