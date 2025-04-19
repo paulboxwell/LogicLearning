@@ -37,7 +37,7 @@ class Game:
 
     def is_won(self):
         distance = abs(self.current_x) + abs(self.current_y)
-        return distance <= 3
+        return distance <= 2
 
     def is_lost(self, rounds):
         distance = abs(self.current_x) + abs(self.current_y)

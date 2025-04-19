@@ -8,7 +8,6 @@ def main():
     rounds = 0
 
     while True:
-        rounds += 1
         game.reset_position()
         moves = 0
 
@@ -20,11 +19,14 @@ def main():
 
             if game.is_won():
                 print(f"AI won the round in {moves} moves!")
+                print(game.current_x," ",game.current_y)
                 ai.round_complete("won")
                 break
             elif game.is_lost(moves):
                 print(f"AI lost the round after {moves} moves.")
+                print(game.current_x," ",game.current_y)
                 ai.round_complete("lost")
+                rounds += 1
                 break
 
         # Check if the AI has mastered all inputs
